@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/layout/header/header.component';
@@ -14,6 +13,8 @@ import { PedidoslistComponent } from './components/pedidos/pedidoslist/pedidosli
 import { PedidosdetailsComponent } from './components/pedidos/pedidosdetails/pedidosdetails.component';
 import { ProdutoslistComponent } from './components/produtos/produtoslist/produtoslist.component';
 import { ProdutosdetailsComponent } from './components/produtos/produtosdetails/produtosdetails.component';
+import { httpInterceptorProviders } from './interceptors/http-interceptor.service';
+import { LoginService } from './services/login.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,11 @@ import { ProdutosdetailsComponent } from './components/produtos/produtosdetails/
     NgbModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    //colocar LoginService e o Interceptor aqui
+    httpInterceptorProviders,
+    LoginService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
