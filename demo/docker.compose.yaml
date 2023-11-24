@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  testingAng:
+    image: a72f0377e78f
+    container_name: testingAng
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - "9770:5421"
